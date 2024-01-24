@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-factory</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+            color: inherit;
+        }
+
+        .demo {
+            padding: 50px 100px;
+        }
+
+        .title {
+            font-size: 16vw;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2vw;
+            margin-top: 50px;
+        }
+
+        .item {
+            flex: 1 0 0;
+        }
+
+        .item-thumbnail {
+            position: relative;
+            padding-top: 65%;
+        }
+
+        .item-thumbnail img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+
+        }
+
+        .item-desc {
+            font-size: 0.6vw;
+            margin: 20px 0 15px 0;
+        }
+
+        .item-title {
+            font-size: 2vw;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="demo">
+        <div class="title">DEMO</div>
+        <div class="list">
+            <a class="item" href="demo/neonCursor.html" target="_blank">
+                <div class="item-thumbnail">
+                    <img src="/assets/neon-cursor.ChsGiGc9.jpg"
+                         alt="">
+                </div>
+
+                <div class="item-text">
+                    <div class="item-desc">neonCursor </div>
+                    <div class="item-title">Neon Cursor</div>
+                </div>
+
+            </a>
+            <a class="item" href="./demo/particlesCursor.html" target="_blank">
+                <div class="item-thumbnail">
+                    <img src="/assets/particles-cursor.k0bbbkmP.jpg"
+                         alt="">
+                </div>
+
+                <div class="item-text">
+                    <div class="item-desc">particlesCursor </div>
+                    <div class="item-title">Particles Cursor</div>
+                </div>
+
+            </a>
+            <a class="item" target="_blank" href="./demo/bgFishes.html">
+                <div class="item-thumbnail">
+                    <img src="/assets/bg-fishes.CpCdVmHu.jpg"
+                         alt="">
+                </div>
+
+                <div class="item-text">
+                    <div class="item-desc">fishesBackground </div>
+                    <div class="item-title">Bg Fishes</div>
+                </div>
+
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

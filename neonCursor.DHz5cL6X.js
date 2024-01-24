@@ -1,0 +1,1 @@
+import"./chunk.9p4a8sJU.js";import{i as e}from"./chunk.VGOPF4ws.js";e({el:document.getElementById("app"),shaderPoints:16,curvePoints:80,curveLerp:.5,radius1:5,radius2:30,velocityTreshold:10,sleepRadiusX:100,sleepRadiusY:100,sleepTimeCoefX:.0025,sleepTimeCoefY:.0025});
