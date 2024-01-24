@@ -2,7 +2,7 @@
 import {defineConfig} from 'vite';
 
 const fs = require('fs');
-
+import path from 'path'
 function getHtmlFiles(dir) {
     const files = fs.readdirSync(dir);
     const htmlFiles = files.filter(file => file.endsWith('.html'));
@@ -16,6 +16,13 @@ function getHtmlFiles(dir) {
 const entryDir = './demo';
 const htmlFiles = getHtmlFiles(entryDir);
 export default defineConfig({
+    resolve: {
+        // 设置文件目录别名
+        // 根目录地址变更，也需要调整
+        alias: {
+            'public': path.resolve(__dirname, './public'),
+        },
+    },
     build: {
         outDir: 'dist', // 打包输出目录
         assetsDir: 'assets', // 静态资源目录

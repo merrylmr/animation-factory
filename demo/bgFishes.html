@@ -56,14 +56,15 @@
 
 
 <script type="module">
-    import { fishesBackground } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
-
+//    TODO: 这里直接用three-toys会报错
+    import {fishesBackground} from 'public/js/threejs-toys.module.cdn.min.js'
+    import fishTexture from '../image/fishes.png';
     fishesBackground({
         el: document.getElementById('app'),
         gpgpuSize: 96,
         background: 0x031F48,
         fogDensity: 0.025,
-        texture: './image/fishes.png',
+        texture: fishTexture,
         textureCount: 8,
         material: 'phong',
         materialParams: {
