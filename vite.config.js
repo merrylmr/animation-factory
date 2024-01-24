@@ -16,6 +16,8 @@ function getHtmlFiles(dir) {
 const entryDir = './demo';
 const htmlFiles = getHtmlFiles(entryDir);
 export default defineConfig({
+    // 线上部署时候，为animation-factory
+    base: import.meta.env.DEV ? '/' : '/animation-factory/',
     resolve: {
         // 设置文件目录别名
         // 根目录地址变更，也需要调整
