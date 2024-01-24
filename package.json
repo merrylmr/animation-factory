@@ -2,6 +2,8 @@
   "name": "animation-factory",
   "version": "1.0.0",
   "dependencies": {
+    "three": "^0.160.1",
+    "threejs-toys": "^0.0.8",
     "vite": "^5.0.11"
   },
   "scripts": {

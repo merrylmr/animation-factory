@@ -2,59 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>animation-factory</title>
     <style>
-        body, html, #app {
+        * {
+            padding: 0;
             margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+            color: inherit;
+        }
+
+        .demo {
+            padding: 50px 100px;
+        }
+
+        .title {
+            font-size: 16vw;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2vw;
+            margin-top: 50px;
+        }
+
+        .item {
+            flex: 1 0 0;
+        }
+
+        .item-thumbnail {
+            position: relative;
+            padding-top: 65%;
+        }
+
+        .item-thumbnail img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
             height: 100%;
+            border-radius: 15px;
+
         }
 
-        #app {
-            overflow: hidden;
-            touch-action: pan-up;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+        .item-desc {
+            font-size: 0.6vw;
+            margin: 20px 0 15px 0;
         }
 
-        #app h1 {
-            --fontSize: 60px;
-            --lineHeight: 80px;
-            width: auto;
-            height: calc(2 * var(--lineHeight));
-            line-height: var(--lineHeight);
-            margin: calc(50vh - var(--lineHeight)) auto 0;
-            font-size: var(--fontSize);
-            text-transform: uppercase;
-        }
-
-        #app a {
-            margin-top: 10px;
-            display: inline-block;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        #app canvas {
-            display: block;
-            position: fixed;
-            z-index: -1;
-            top: 0;
+        .item-title {
+            font-size: 2vw;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <div id="hero">
-        <h1>NEON<br/>CURSOR</h1>
-        <a target="_blank" href="https://github.com/klevron/threejs-toys">github/threejs-toys</a>
+    <div class="demo">
+        <div class="title">DEMO</div>
+        <div class="list">
+            <a class="item" href="demo/neonCursor.html" target="_blank">
+                <div class="item-thumbnail">
+                    <img src="./image/neon-cursor.jpg"
+                         alt="">
+                </div>
+
+                <div class="item-text">
+                    <div class="item-desc">neonCursor </div>
+                    <div class="item-title">Neon Cursor</div>
+                </div>
+
+            </a>
+            <a class="item" href="./demo/particlesCursor.html" target="_blank">
+                <div class="item-thumbnail">
+                    <img src="./image/particles-cursor.jpg"
+                         alt="">
+                </div>
+
+                <div class="item-text">
+                    <div class="item-desc">particlesCursor </div>
+                    <div class="item-title">Particles Cursor</div>
+                </div>
+
+            </a>
+            <a class="item" target="_blank" href="./demo/bgFishes.html">
+                <div class="item-thumbnail">
+                    <img src="./image/bg-fishes.jpg"
+                         alt="">
+                </div>
+
+                <div class="item-text">
+                    <div class="item-desc">fishesBackground </div>
+                    <div class="item-title">Bg Fishes</div>
+                </div>
+
+            </a>
+        </div>
     </div>
 </div>
-
-
-<script type="module" src="./js/index.js"></script>
-
 </body>
 </html>

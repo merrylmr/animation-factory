@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, html, #app {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #app {
+            overflow: hidden;
+            touch-action: pan-up;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            text-shadow: 0 0 5px #000000, 0 0 20px #000;
+            user-select: none;
+        }
+
+        #app h1 {
+            --fontSize: 50px;
+            --lineHeight: 70px;
+            width: auto;
+            height: calc(2 * var(--lineHeight));
+            line-height: var(--lineHeight);
+            margin: calc(50vh - var(--lineHeight)) auto 0;
+            font-size: var(--fontSize);
+        }
+
+        #app a {
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #app canvas {
+            display: block;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="hero">
+        <h1>🐠<br/>BACKGROUND</h1>
+        <a target="_blank" href="https://github.com/klevron/threejs-toys">github/threejs-toys</a>
+    </div>
+</div>
+
+
+<script type="module">
+    import { fishesBackground } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
+
+    fishesBackground({
+        el: document.getElementById('app'),
+        gpgpuSize: 96,
+        background: 0x031F48,
+        fogDensity: 0.025,
+        texture: './image/fishes.png',
+        textureCount: 8,
+        material: 'phong',
+        materialParams: {
+            transparent: true,
+            alphaTest: 0.5
+        },
+        fishScale: [1, 1, 1],
+        fishWidthSegments: 8,
+        fishSpeed: 1.5,
+        noiseCoordScale: 0.01,
+        noiseTimeCoef: 0.0005,
+        noiseIntensity: 0.0005,
+        attractionRadius1: 50,
+        attractionRadius2: 150,
+        maxVelocity: 0.1
+    })
+
+</script>
+
+</body>
+</html>
