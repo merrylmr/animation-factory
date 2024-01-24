@@ -1,5 +1,5 @@
 // vite.config.js
-import {defineConfig} from 'vite';
+import {defineConfig, loadEnv} from 'vite';
 
 const fs = require('fs');
 import path from 'path'
@@ -17,7 +17,7 @@ const entryDir = './demo';
 const htmlFiles = getHtmlFiles(entryDir);
 export default defineConfig({
     // 线上部署时候，为animation-factory
-    base: import.meta.env.DEV ? '/' : '/animation-factory/',
+    base: process.env.NODE_ENV === 'development'? '/': '/animation-factory/',
     resolve: {
         // 设置文件目录别名
         // 根目录地址变更，也需要调整
