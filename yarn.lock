@@ -187,6 +187,11 @@
   resolved "https://r.cnpmjs.org/@types/estree/-/estree-1.0.5.tgz#a6ce3e556e00fd9895dd872dd172ad0d4bd687f4"
   integrity sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==
 
+"@types/p5@^0.9.1":
+  version "0.9.1"
+  resolved "https://r2.cnpmjs.org/@types/p5/-/p5-0.9.1.tgz#920c6cd6ee30b5d9e5cc04cb9b11bb762c333bc5"
+  integrity sha512-4glOKdqdBiRWDFZwi/MjHudPV2U4t2L4fTTSacGapfFxyNXzZcAshAjqmrJkCIZcFlhRBEAL7AM95xRDMfrIwg==
+
 esbuild@^0.19.3:
   version "0.19.11"
   resolved "https://r.cnpmjs.org/esbuild/-/esbuild-0.19.11.tgz#4a02dca031e768b5556606e1b468fe72e3325d96"
@@ -225,6 +230,19 @@ nanoid@^3.3.7:
   version "3.3.7"
   resolved "https://r.cnpmjs.org/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
   integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
+
+p5@^1.1.9:
+  version "1.9.0"
+  resolved "https://r.cnpmjs.org/p5/-/p5-1.9.0.tgz#04c406ae683449106d514108648035b21aa850fb"
+  integrity sha512-+5/hz0ZokCDf7BMMAeemE7FIo7gFZK7ImL62acHLXZwerGjqj+171bnaAWj4aCFCx6fwysAr2U7/AKuPyPhehA==
+
+p5i@^0.4.2:
+  version "0.4.2"
+  resolved "https://r2.cnpmjs.org/p5i/-/p5i-0.4.2.tgz#457b5a59fccabf9b64c9451df93fa9753423b0e8"
+  integrity sha512-AcnrXpSkmbBg8XK4CVSbK/P+p9BaZT2Du5lpbF4vWO/9tnomvsu8cSa64Ol7bWSQdd0kMtK1tbcQsLgUa6+Yzg==
+  dependencies:
+    "@types/p5" "^0.9.1"
+    p5 "^1.1.9"
 
 picocolors@^1.0.0:
   version "1.0.0"
