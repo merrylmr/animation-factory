@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
         body {
             width: 100%;
             height: 100vh;
@@ -13,34 +18,44 @@
         }
 
         #canvas {
-            width: 400px;
-            height: 300px;
+            width: 500px;
+            height: 250px;
+        }
 
+        .canvas-wrapper {
+            position: relative;
+        }
 
+        .adv {
+            position: absolute;
+            top: 0;
+            right: 0;
         }
     </style>
 </head>
 <body>
-<div id="canvas">
+<div class="canvas-wrapper">
+    <div id="canvas">
 
+    </div>
+    <img class="adv" src="https://www.joshwcomeau.com/assets/me-light.webp" alt="" height="230">
 </div>
+
 <script type="module">
     import {p5i} from 'p5i'
-    import {distance, r60, r90, SQRT_3} from './utils'
+    import {distance, r60} from './utils'
 
-    const w = 400
-    const h = 300
+    const w = 500
+    const h = 250
 
     const len = 9
-    const margin = 15
+    const margin = 25
     const strokeWidth = 3
 
-    const columns = 30
-    const rows = 30
+    const columns = 10
+    const rows = 20
     const n = 20
 
-    const cx = w / 2
-    const cy = h / 2
 
     const {
         createCanvas,
@@ -68,20 +83,12 @@
     function draw({mouseX, mouseY}) {
         background('transparent')
 
-        for (let i = 0; i < rows - 1; i++) {
-            for (let j = 0; j < columns - 1; j++) {
-                const q = i - rows / 2
-                const r = j - columns / 2
-                const s = -q - r
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < columns; j++) {
 
-
-                if (abs(q) > n || abs(r) > n || abs(s) > n)
-                    continue
-
-                // https://www.redblobgames.com/grids/hexagons/#hex-to-pixel-axial
                 const currentOffset = {
-                    x: cx + margin * (q * SQRT_3 + r * SQRT_3 / 2),
-                    y: cx + margin * (r * 3 / 2),
+                    x: margin * i + margin / 2,
+                    y: margin * j + margin / 2,
                 }
 
                 const d = distance([currentOffset.x, currentOffset.y], [mouseX, mouseY])
@@ -94,18 +101,13 @@
                 }
 
                 let theta = atan2(delta.y, delta.x)
-                const deltaThreshold = 40
+
 
                 theta += r60 * gravity
 
                 strokeWeight(strokeWidth)
                 stroke(68, 51, 255)
 
-                if (abs(delta.x) < deltaThreshold && abs(delta.y) < deltaThreshold) {
-                    const amt = (abs(delta.x) + abs(delta.y)) / 2
-                    const amtMapped = map(amt, 0, deltaThreshold, -50, 255)
-                    stroke(68, 51, 255)
-                }
 
                 push()
                 translate(currentOffset.x, currentOffset.y)
