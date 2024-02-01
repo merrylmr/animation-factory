@@ -53,17 +53,65 @@
         }
 
         .item-desc {
-            font-size: 0.6vw;
-            margin: 20px 0 15px 0;
+            font-size: 16px;
+            color: #777;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        //margin: 10px 0;
         }
 
+
         .item-title {
-            font-size: 2vw;
+            font-size: 1.5vw;
+            margin-top: 15px;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 100px;
+            border: 1px solid #eee;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav {
+            display: flex;
+            margin-left: 50px;
+        }
+
+        .nav-item {
+            padding: 5px;
+        }
+
+        .logo {
+            font-size: 36px;
         }
     </style>
 </head>
 <body>
 <div id="app">
+    <header class="app-header">
+        <div class="header-left">
+            <div class="logo">
+                MerryAm
+            </div>
+            <div class="nav">
+                <div class="nav-item">动画特效</div>
+                <div class="nav-item">炫酷网站</div>
+                <div class="nav-item">关于我</div>
+            </div>
+        </div>
+        <div class="header-right">
+            github
+        </div>
+    </header>
+
     <div class="demo">
         <div class="title">DEMO</div>
         <div class="list">
@@ -74,8 +122,10 @@
                 </div>
 
                 <div class="item-text">
-                    <div class="item-desc">neonCursor </div>
                     <div class="item-title">Neon Cursor</div>
+                    <div class="item-desc">{ threejs-toys }
+                        <div class="code">View Code</div>
+                    </div>
                 </div>
 
             </a>
@@ -86,8 +136,11 @@
                 </div>
 
                 <div class="item-text">
-                    <div class="item-desc">particlesCursor </div>
                     <div class="item-title">Particles Cursor</div>
+                    <div class="item-desc">
+                        <div class="tip">{ threejs-toys }</div>
+                        <div class="code">View Code</div>
+                    </div>
                 </div>
 
             </a>
@@ -98,8 +151,10 @@
                 </div>
 
                 <div class="item-text">
-                    <div class="item-desc">fishesBackground </div>
                     <div class="item-title">Bg Fishes</div>
+                    <div class="item-desc">{ threejs-toys }
+                        <div class="code">View Code</div>
+                    </div>
                 </div>
 
             </a>
@@ -112,8 +167,10 @@
                 </div>
 
                 <div class="item-text">
-                    <div class="item-desc">p5js </div>
                     <div class="item-title">Lines</div>
+                    <div class="item-desc">{ p5js }
+                        <div class="code">View Code</div>
+                    </div>
                 </div>
 
             </a>
