@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gsap</title>
+    <link href="./style/gsap.css" rel="stylesheet">
+</head>
+<body>
+<div class="home-hero" data-block="home-hero">
+    <div class="container">
+        <div class="home-hero__inner">
+            <h1 class="home-hero__heading">
+                <span class="home-hero__animate">
+                        <span class="a">
+                            <span class="clip">
+                              <span> A</span>
+                            </span>
+                        </span>
+                    <span class="n">
+                        <div class="home-hero__flair home-hero__flair--windmill">
+                           <svg viewBox="0 0 137 135" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                                <path d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z"
+                                      fill="url(#paint0_linear_1655_45397)"/>
+                                <path d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z"
+                                      fill="url(#pattern-home-hero-windmill-0)" fill-opacity="0.6"
+                                      style="mix-blend-mode:multiply"/>
+                                <defs>
+                                <pattern id="pattern-home-hero-windmill-0" patternContentUnits="objectBoundingBox"
+                                         width="1.45985" height="1.48148">
+                                <use xlink:href="#svg-noise" transform="scale(0.00291971 0.00296296)"/>
+                                </pattern>
+                                <linearGradient id="paint0_linear_1655_45397" x1="-76.6791" y1="-15.6157" x2="165.682"
+                                                y2="81.0082"
+                                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0.427083" stop-color="#FF8709"/>
+                                <stop offset="0.791667" stop-color="#F7BDF8"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="home-hero__flair home-hero__flair--circles">
+                                 <svg viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M45.9341 76.316C43.4159 76.8454 40.8068 77.1236 38.1333 77.1236C17.0729 77.1236 0 59.8589 0 38.5618C0 17.2647 17.0729 0 38.1333 0C59.1938 0 76.2666 17.2647 76.2666 38.5618C76.2666 40.3457 76.1469 42.1013 75.915 43.8209H80.0849C79.853 42.1013 79.7332 40.3457 79.7332 38.5618C79.7332 17.2647 96.8061 0 117.867 0C138.927 0 156 17.2647 156 38.5618C156 59.8589 138.927 77.1236 117.867 77.1236C115.499 77.1236 113.182 76.9054 110.934 76.4879V79.5128C113.182 79.0953 115.499 78.8771 117.867 78.8771C138.927 78.8771 156 96.1418 156 117.439C156 138.736 138.927 156.001 117.867 156.001C96.8064 156.001 79.7335 138.736 79.7335 117.439C79.7335 114.736 80.0086 112.097 80.5319 109.551H75.6376C76.0508 111.825 76.2667 114.169 76.2667 116.564C76.2667 137.861 59.1938 155.126 38.1334 155.126C17.0729 155.126 6.30037e-05 137.861 6.30037e-05 116.564C6.30037e-05 95.2671 17.0729 78.0024 38.1334 78.0024C40.8068 78.0024 43.416 78.2806 45.9341 78.8099V76.316Z"
+                                          fill="url(#paint0_radial_1336_100489)"/>
+                                    <path fill-opacity=".6" fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M45.9341 76.316C43.4159 76.8454 40.8068 77.1236 38.1333 77.1236C17.0729 77.1236 0 59.8589 0 38.5618C0 17.2647 17.0729 0 38.1333 0C59.1938 0 76.2666 17.2647 76.2666 38.5618C76.2666 40.3457 76.1469 42.1013 75.915 43.8209H80.0849C79.853 42.1013 79.7332 40.3457 79.7332 38.5618C79.7332 17.2647 96.8061 0 117.867 0C138.927 0 156 17.2647 156 38.5618C156 59.8589 138.927 77.1236 117.867 77.1236C115.499 77.1236 113.182 76.9054 110.934 76.4879V79.5128C113.182 79.0953 115.499 78.8771 117.867 78.8771C138.927 78.8771 156 96.1418 156 117.439C156 138.736 138.927 156.001 117.867 156.001C96.8064 156.001 79.7335 138.736 79.7335 117.439C79.7335 114.736 80.0086 112.097 80.5319 109.551H75.6376C76.0508 111.825 76.2667 114.169 76.2667 116.564C76.2667 137.861 59.1938 155.126 38.1334 155.126C17.0729 155.126 6.30037e-05 137.861 6.30037e-05 116.564C6.30037e-05 95.2671 17.0729 78.0024 38.1334 78.0024C40.8068 78.0024 43.416 78.2806 45.9341 78.8099V76.316Z"
+                                          fill="url(#pattern-home-hero-circles-0)" style="mix-blend-mode:multiply"/>
+                                    <defs>
+                                    <pattern id="pattern-home-hero-circles-0" patternContentUnits="objectBoundingBox"
+                                             width="0.641025" height="0.641023">
+                                    <use xlink:href="#svg-noise" transform="scale(0.00128205)"/>
+                                    </pattern>
+                                    <radialGradient id="paint0_radial_1336_100489" cx="0" cy="0" r="1"
+                                                    gradientUnits="userSpaceOnUse"
+                                                    gradientTransform="translate(48.0022 111.876) rotate(-90) scale(122.883 122.883)">
+                                    <stop stop-color="#E193FF"/>
+                                    <stop offset="0.6721" stop-color="#8E78DA"/>
+                                    <stop offset="0.7378" stop-color="#937DDB"/>
+                                    <stop offset="0.8164" stop-color="#A28BDD"/>
+                                    <stop offset="0.9014" stop-color="#BAA3E2"/>
+                                    <stop offset="0.9905" stop-color="#DBC3E7"/>
+                                    <stop offset="1" stop-color="#DFC7E8"/>
+                                    </radialGradient>
+                                    </defs>
+                                </svg>
+                        </div>
+                        <span class="clip">
+                            <span>
+                                <span>n</span>
+                                <span>a</span>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="i clip">
+                        <span>i</span>
+                    </span>
+                    <span class="m clip">
+                        <span>m</span>
+                    </span>
+                    <span class="a2">
+                        <div class="home-hero__flair home-hero__flair--star">
+                            <svg viewBox="0 0 157 156" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M82.2214 104.04L105.483 143.586C108.242 148.276 114.274 149.852 118.974 147.112V147.112C123.675 144.371 125.275 138.345 122.552 133.634L99.5971 93.9091L144.009 105.424C149.276 106.79 154.656 103.639 156.042 98.3773V98.3773C157.428 93.1154 154.298 87.7233 149.042 86.317L104.72 74.4593L144.266 51.1978C148.957 48.439 150.533 42.407 147.792 37.7062V37.7062C145.052 33.0054 139.026 31.4057 134.314 34.1282L94.5898 57.0835L106.105 12.6719C107.471 7.40463 104.32 2.02469 99.058 0.638673V0.638673C93.7961 -0.747342 88.4041 2.38242 86.9977 7.63895L75.14 51.9603L51.8786 12.4142C49.1197 7.72403 43.0878 6.14763 38.387 8.8883V8.8883C33.6862 11.629 32.0865 17.6548 34.809 22.3662L57.7643 62.0908L13.3526 50.5758C8.08539 49.2101 2.70545 52.3607 1.31944 57.6226V57.6226C-0.0665745 62.8845 3.06319 68.2766 8.31971 69.6829L52.6411 81.5406L13.095 104.802C8.4048 107.561 6.8284 113.593 9.56907 118.294V118.294C12.3097 122.994 18.3356 124.594 23.0469 121.872L62.7716 98.9164L51.2566 143.328C49.8909 148.595 53.0414 153.975 58.3034 155.361V155.361C63.5653 156.747 68.9573 153.617 70.3637 148.361L82.2214 104.04Z"
+                                      fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M82.2214 104.04L105.483 143.586C108.242 148.276 114.274 149.852 118.974 147.112V147.112C123.675 144.371 125.275 138.345 122.552 133.634L99.5971 93.9091L144.009 105.424C149.276 106.79 154.656 103.639 156.042 98.3773V98.3773C157.428 93.1154 154.298 87.7233 149.042 86.317L104.72 74.4593L144.266 51.1978C148.957 48.439 150.533 42.407 147.792 37.7062V37.7062C145.052 33.0054 139.026 31.4057 134.314 34.1282L94.5898 57.0835L106.105 12.6719C107.471 7.40463 104.32 2.02469 99.058 0.638673V0.638673C93.7961 -0.747342 88.4041 2.38242 86.9977 7.63895L75.14 51.9603L51.8786 12.4142C49.1197 7.72403 43.0878 6.14763 38.387 8.8883V8.8883C33.6862 11.629 32.0865 17.6548 34.809 22.3662L57.7643 62.0908L13.3526 50.5758C8.08539 49.2101 2.70545 52.3607 1.31944 57.6226V57.6226C-0.0665745 62.8845 3.06319 68.2766 8.31971 69.6829L52.6411 81.5406L13.095 104.802C8.4048 107.561 6.8284 113.593 9.56907 118.294V118.294C12.3097 122.994 18.3356 124.594 23.0469 121.872L62.7716 98.9164L51.2566 143.328C49.8909 148.595 53.0414 153.975 58.3034 155.361V155.361C63.5653 156.747 68.9573 153.617 70.3637 148.361L82.2214 104.04Z"
+                                      fill="url(#paint0_radial_1413_80169)"/>
+                                <path fill-opacity=".6" fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M82.2214 104.04L105.483 143.586C108.242 148.276 114.274 149.852 118.974 147.112V147.112C123.675 144.371 125.275 138.345 122.552 133.634L99.5971 93.9091L144.009 105.424C149.276 106.79 154.656 103.639 156.042 98.3773V98.3773C157.428 93.1154 154.298 87.7233 149.042 86.317L104.72 74.4593L144.266 51.1978C148.957 48.439 150.533 42.407 147.792 37.7062V37.7062C145.052 33.0054 139.026 31.4057 134.314 34.1282L94.5898 57.0835L106.105 12.6719C107.471 7.40463 104.32 2.02469 99.058 0.638673V0.638673C93.7961 -0.747342 88.4041 2.38242 86.9977 7.63895L75.14 51.9603L51.8786 12.4142C49.1197 7.72403 43.0878 6.14763 38.387 8.8883V8.8883C33.6862 11.629 32.0865 17.6548 34.809 22.3662L57.7643 62.0908L13.3526 50.5758C8.08539 49.2101 2.70545 52.3607 1.31944 57.6226V57.6226C-0.0665745 62.8845 3.06319 68.2766 8.31971 69.6829L52.6411 81.5406L13.095 104.802C8.4048 107.561 6.8284 113.593 9.56907 118.294V118.294C12.3097 122.994 18.3356 124.594 23.0469 121.872L62.7716 98.9164L51.2566 143.328C49.8909 148.595 53.0414 153.975 58.3034 155.361V155.361C63.5653 156.747 68.9573 153.617 70.3637 148.361L82.2214 104.04Z"
+                                      fill="url(#pattern-home-hero-star-0)" style="mix-blend-mode:multiply"/>
+                                <defs>
+                                <pattern id="pattern-home-hero-star-0" patternContentUnits="objectBoundingBox"
+                                         width="0.625" height="0.625">
+                                <use xlink:href="#svg-noise" transform="scale(0.00125)"/>
+                                </pattern>
+                                <radialGradient id="paint0_radial_1413_80169" cx="0" cy="0" r="1"
+                                                gradientUnits="userSpaceOnUse"
+                                                gradientTransform="translate(124.192 87.08) rotate(149.757) scale(126.034)">
+                                <stop stop-color="#FFEBE7"/>
+                                <stop offset="0.6721" stop-color="#FF9C7C"/>
+                                <stop offset="0.8164" stop-color="#FF9983"/>
+                                <stop offset="0.9014" stop-color="#FF774B"/>
+                                <stop offset="1" stop-color="#E76F00"/>
+                                </radialGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="clip">
+                            <span>a</span>
+                        </span>
+                    </span>
+
+                    <span class="t">
+                        <span class="clip">
+                            <span>t</span>
+                            <span>
+                                <span>1</span>
+                                <span>0</span>
+                                <span>0</span>
+                            </span>
+                        </span>
+                    </span>
+
+                    <span class="e clip">
+                        <span>e</span>
+                    </span>
+                </span>
+                <span class="home-hero__anything">
+                    <span class="a clip">
+                        <span>a</span>
+                        <span>a</span>
+                    </span>
+                    <span class="n clip">
+                        <span>n</span>
+                        <span>n</span>
+                    </span>
+                    <span class="y">
+                        <span>y</span>
+                    </span>
+                    <span class="t">
+                        <div class="home-hero__flair home-hero__flair--bolt">
+                                  <svg viewBox="0 0 134 229" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                       aria-hidden="true">
+                                    <path id="bolt-path" fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M101.08 11C102.439 11 103.402 12.3264 102.982 13.6187L78.6746 88.3335C78.2542 89.6259 79.2175 90.9522 80.5765 90.9522H108.983C110.634 90.9522 111.574 92.8401 110.579 94.1577L10.2304 227L39.4408 125.708C39.8095 124.429 38.8499 123.154 37.5191 123.154H7.82733C6.44727 123.154 5.48193 121.789 5.94147 120.488L44.1353 12.334C44.4176 11.5346 45.1733 11 46.0211 11H101.08Z"
+                                          stroke="#0AE448" stroke-width="4"/>
+                                    <mask id="mask0_1413_68143" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                          y="0" width="134" height="227">
+                                    <rect id="bolt-rect" width="134" height="227" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#mask0_1413_68143)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M102.08 10C103.439 10 104.402 11.3264 103.982 12.6187L79.6746 87.3335C79.2542 88.6259 80.2175 89.9522 81.5765 89.9522H109.983C111.634 89.9522 112.574 91.8401 111.579 93.1577L11.2304 226L40.4408 124.708C40.8095 123.429 39.8499 122.154 38.5191 122.154H8.82733C7.44727 122.154 6.48193 120.789 6.94147 119.488L45.1353 11.334C45.4176 10.5346 46.1733 10 47.0211 10H102.08Z"
+                                          fill="#0AE448"/>
+                                    </g>
+                                </svg>
+                        </div>
+                         <span>t</span>
+                    </span>
+                    <span class="h">
+                        <div id="home-hero-squiggle" class="home-hero__flair home-hero__flair--worm"
+                        >
+                            <img src="https://gsap.com/tf-assets/worm-e8f0c8f6.png" alt="">
+                        </div>
+
+                       <span class="clip">
+                           <span>h</span>
+                       </span>
+
+                    </span>
+                    <span class="i">
+                        <span>i</span>
+                    </span>
+                    <span class="n2 clip">
+                        <span>n</span>
+                    </span>
+                    <span class="g">
+                        <span>g</span>
+                    </span>
+                </span>
+            </h1>
+            <div class="home-hero__subtitle"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="module">
+    import {gsap} from "gsap";
+
+    class Hero {
+        constructor() {
+            this.block = document.querySelector('.home-hero');
+        }
+
+        init() {
+            this.DOM = {
+                heading1: this.block.querySelector(".home-hero__animate"),
+                heading2: this.block.querySelector(".home-hero__anything"),
+            }
+            this.selector = {
+                animate: gsap.utils.selector(this.DOM.heading1),
+                anything: gsap.utils.selector(this.DOM.heading2)
+            }
+            this.defaults = {
+                ease: "power2.out",
+                duration: .6
+            }
+            this.createTimeline()
+        }
+
+        createTimeline() {
+            const e = gsap.timeline({
+                id: "home-hero",
+                defaults: this.defaults
+            })
+            e.set([this.DOM.heading1, this.DOM.heading2], {
+                autoAlpha: 1
+            })
+            e.add(this.char1())
+            e.add(this.char2(), 0.4)
+            e.add(this.char3(), 1)
+            e.add(this.char5(), 0.8)
+            e.add(this.char6(), 1.1)
+            e.add(this.char8to9(), 1.5)
+            e.add(this.char10(), 1.7)
+            e.add(this.char11(), 2)
+            e.add(this.char12(), 1.9)
+            e.add(this.char13(), 2.4)
+            e.add(this.char15(), 2.2)
+        }
+
+        char1() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.animate(".a > span")
+                , s = this.selector.animate(".a > span > span");
+
+            return e.set(r, {
+                transformOrigin: "50% 100%"
+            })
+                .from(s, {
+                    yPercent: 100
+                })
+                .from(r, {
+                    rotationX: -180,
+                    ease: "back.out(1.7)",
+                    duration: 1
+                }, "-=.4");
+        }
+
+        char2() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.animate(".home-hero__flair--circles")
+                , s = this.selector.animate(".home-hero__flair--circles svg")
+                , o = this.selector.animate(".home-hero__flair--windmill")
+                , a = this.selector.animate(".n > span > span")
+                , i = this.selector.animate(".n > span > span > span");
+
+            return e.set(i[1], {
+                autoAlpha: 1
+            })
+                .set(r, {
+                    autoAlpha: 1,
+                    yPercent: 100
+                })
+                .from(s, {
+                    scale: 0,
+                    ease: "back.out(1.7)"
+                })
+                .to(r, {
+                    yPercent: -200,
+                    autoAlpha: 0,
+                    duration: 1.5,
+                    ease: "power4.out"
+                })
+                .from(a, {
+                    yPercent: 100,
+                    duration: .4
+                }, "<")
+                .from(o, {
+                    x: () => window.innerWidth / -2,
+                    rotationZ: -360,
+                    duration: 1
+                }, "<")
+                .from(i[0], {
+                    rotationY: -180,
+                    duration: .3
+                }, "+=.4")
+                .to(i[1], {
+                    rotationY: 180,
+                    duration: .3
+                }, "<")
+                .to(o, {
+                    rotationZ: 90,
+                    duration: .3,
+                    repeat: -1,
+                    repeatDelay: 1
+                }, "<")
+        }
+
+        char3() {
+            const e = this.selector.animate(".i > span");
+            return gsap.from(e, {
+                yPercent: -100,
+                ease: "back.out(1.4)",
+                duration: 1
+            })
+        }
+
+        char4() {
+            const e = this.selector.animate(".m > span");
+            return gsap.from(e, {
+                xPercent: -100,
+                ...this.defaults
+            })
+        }
+
+        char5() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.animate(".a2")
+                , s = this.selector.animate(".home-hero__flair--star")
+                , o = this.selector.animate(".home-hero__flair--star svg")
+                , a = this.selector.animate(".a2 > span > span");
+            return e.set(s, {
+                xPercent: -150,
+                autoAlpha: 1
+            })
+                .from(o, {
+                    scale: 0,
+                    duration: .4
+                })
+                .add(this.char4(), "+=.6")
+                .to(s, {
+                    xPercent: 0
+                }, "<")
+                .set(r, {
+                    overflow: "hidden"
+                })
+                .to(s, {
+                    yPercent: 130,
+                    ease: "power2.in"
+                }, "+=.5")
+                .from(a, {
+                    yPercent: 100
+                }, "-=.3")
+                .to(o, {
+                    rotationZ: 360,
+                    ease: "none",
+                    repeat: 2,
+                    duration: 2
+                }, 0)
+        }
+
+        char6() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.animate(".t > span > span")[0]
+                , s = this.selector.animate(".t > span > span")
+                , o = this.selector.animate(".t > span > span > span");
+            return e.set(s, {
+                autoAlpha: 1
+            })
+                .from(o[0], {
+                    yPercent: 100,
+                    duration: .4
+                }, "<")
+                .fromTo([o[1], o[2]], {
+                    yPercent: 100
+                }, {
+                    yPercent: -100,
+                    duration: .9,
+                    stagger: .1,
+                    ease: "power2.inOut"
+                }, "+=.2")
+                .to(o[0], {
+                    yPercent: -100
+                }, "-=.6")
+                .from(r, {
+                    yPercent: 100,
+                    duration: .9
+                }, "<")
+                .add(this.char7(), "<");
+        }
+
+        char7() {
+            const e = this.selector.animate(".e > span");
+            return gsap.from(e, {
+                yPercent: 100,
+                duration: .9
+            })
+        }
+
+        char8to9() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.anything(".a span:first-of-type, .n span:first-of-type")
+                , s = this.selector.anything(".a span:last-of-type, .n span:last-of-type");
+            return e
+                .fromTo(s, {
+                    yPercent: 100
+                }, {
+                    keyframes: {
+                        yPercent: [100, 0, 100, 0],
+                        ease: "power1.out"
+                    },
+                    duration: 3,
+                    stagger: .4
+                })
+                .fromTo(r, {
+                    yPercent: -100
+                }, {
+                    keyframes: {
+                        yPercent: [-100, -100, 20, -100],
+                        ease: "power1.out"
+                    },
+                    duration: 3,
+                    stagger: .4
+                }, "<");
+        }
+
+        char10() {
+            const e = this.selector.anything(".y > span");
+            return gsap.from(e, {
+                rotationY: -180,
+                duration: 1,
+                scale: 0
+            })
+        }
+
+        char11() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.anything(".home-hero__flair--bolt")
+                , s = this.selector.anything(".home-hero__flair--bolt #bolt-path")
+                , o = this.selector.anything(".home-hero__flair--bolt #bolt-rect")
+                , a = this.selector.anything(".t span");
+           return e.set(r, {
+                autoAlpha: 1
+            })
+            .from(s, {
+                drawSVG: "0",
+                duration: 1,
+                ease: "power3.inOut"
+            })
+            .from(o, {
+                yPercent: 100,
+                transformOrigin: "50% 100%",
+                duration: 3.5,
+                ease: "power4.out"
+            }, "<.5")
+            .from(r, {
+                keyframes: {
+                    scale: [1, 1.1, .6, .7, .2, .3, 0],
+                    duration: 2
+                }
+            }, "-=2")
+            .from(a, {
+                scale: 0,
+                ease: "back.out(1.4)"
+            }, "<.5");
+        }
+
+        char12() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.anything(".home-hero__flair--worm img")
+                , s = this.selector.anything(".h span span");
+           return e.from(r, {
+                autoAlpha: 0,
+                duration: 1.5,
+                yPercent: 100,
+                rotationZ: 180,
+                ease: "back.out(1.6)"
+            })
+            .from(s, {
+                yPercent: -100
+            }, "<.2");
+        }
+
+        char13() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.anything(".i > span");
+            return e.from(r, {
+                autoAlpha: 0,
+                duration: .1
+            }, "<")
+            .from(r, {
+                rotationX: -450,
+                duration: 1.3
+            }, "<.14")
+            .add(this.char14(), "<+=.5")
+            .to(r, {
+                rotationX: 540,
+                duration: 1.5,
+                repeat: -1,
+                repeatDelay: 3,
+                yoyo: !0,
+                yoyoEase: "power2.out"
+            }, "+=2");
+        }
+
+        char14() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.anything(".n2 span");
+           return e.from(r, {
+                xPercent: -100
+            });
+        }
+
+        char15() {
+            const e = gsap.timeline({
+                defaults: this.defaults
+            })
+                , r = this.selector.anything(".g span");
+           return e.from(r, {
+                autoAlpha: 0,
+                rotationZ: -120,
+                duration: 2,
+                ease: "elastic.out(1, 0.4)"
+            }, "<.6");
+        }
+
+    }
+
+    window.addEventListener('load', () => {
+        const hero = new Hero()
+        hero.init()
+    })
+</script>
+</html>
