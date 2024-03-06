@@ -77,9 +77,11 @@ body {
     overflow: hidden;
 }
 
-.home-hero .container {
-    max-width: 100rem;
+.container {
+    max-width: 120rem;
     margin: auto;
+    padding-left: max(1.5rem, min(6.73139vw - 0.0776699rem, 8rem));
+    padding-right: max(1.5rem, min(6.73139vw - 0.0776699rem, 8rem));
 }
 
 .home-hero__animate {
@@ -195,4 +197,109 @@ body {
 .home-hero__animate .n > span > span > span,
 .home-hero__animate .t > span > span {
     backface-visibility: hidden;
+}
+
+
+.home-intro__inner {
+    overflow: hidden;
+    padding-bottom: max(4.5rem, min(11.8447vw + 1.72391rem, 15.9375rem));
+    padding-top: max(4rem, min(6.40777vw + 2.49818rem, 10.1875rem));
+    position: relative;
+}
+
+@media only screen and (min-width: 48rem) {
+    .home-intro__inner:before {
+        background-color: var(--color-surface25);
+        content: "";
+        height: 0.0625rem;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.home-intro__copy {
+    padding-top: max(3.6875rem, min(0.323625vw + 3.61165rem, 4rem));
+}
+
+.body-l,
+.body-xl {
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+}
+
+.body-xl {
+    font-size: max(2rem, min(3.17152vw + 1.25667rem, 5.0625rem));
+}
+
+.home-intro__highlight span {
+    display: inline-block;
+    position: relative;
+}
+
+.home-intro__flair-wrapper {
+    bottom: 40%;
+    height: max(7.4375rem, min(9.89583vw + 2.6875rem, 14.5625rem));
+    left: 75%;
+    position: absolute;
+    width: max(6.8125rem, min(14.4965vw - 0.145833rem, 17.25rem));
+    z-index: -1;
+}
+
+.home-intro__flair-wrapper
+.home-intro__line-flower {
+    bottom: 0;
+    left: 0;
+    max-height: 11.875rem;
+    max-width: 11.875rem;
+    position: absolute;
+}
+
+@media only screen and (min-width: 77.5rem) {
+    .home-intro__flair-wrapper .home-intro__flair-one {
+        display: block;
+        max-height: 1.9375rem;
+        max-width: 1.9375rem;
+        position: absolute;
+        right: max(-3.125rem, min(3.23625vw - 3.8835rem, 0rem));
+        top: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 77.5rem) {
+    .home-intro__flair-wrapper .home-intro__flair-two {
+        display: block;
+        max-height: 1rem;
+        max-width: 1rem;
+        position: absolute;
+        right: 2.625rem;
+        top: max(-3.125rem, min(3.23625vw - 3.8835rem, 0rem));
+    }
+}
+
+@media only screen and (min-width: 77.5rem) {
+    .home-intro__flair-wrapper .home-intro__flair-three {
+        bottom: 6.625rem;
+        display: block;
+        left: 0;
+        max-height: 1rem;
+        max-width: 1rem;
+        position: absolute;
+    }
+}
+
+
+@media only screen and (min-width: 120rem) {
+    .home-intro__flair-wrapper {
+        bottom: 20%;
+    }
+}
+
+@media only screen and (min-width: 40rem) {
+    .home-intro__flair-wrapper {
+        bottom: 15%;
+        left: 57%;
+    }
 }
