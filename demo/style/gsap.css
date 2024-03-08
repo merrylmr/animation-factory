@@ -248,8 +248,7 @@ body {
     z-index: -1;
 }
 
-.home-intro__flair-wrapper
-.home-intro__line-flower {
+.home-intro__flair-wrapper .home-intro__line-flower {
     bottom: 0;
     left: 0;
     max-height: 11.875rem;
