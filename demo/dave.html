@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            list-style: none;
+        }
+
+        body {
+            background: #000;
+        }
+
+        #dh_cursor {
+            position: fixed;
+            z-index: 99;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            will-change: transform;
+            mix-blend-mode: difference;
+        }
+
+
+        @media (hover: hover) and (pointer: fine) {
+            .dh_cursor__circle {
+                width: 20px;
+                height: 20px;
+                margin-top: -50%;
+                margin-left: -50%;
+                border-radius: 50%;
+                background: #fff;
+                transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+
+            #dh_cursor.menu .dh_cursor__circle {
+                width: 110px;
+                height: 110px;
+                background-color: rgba(225, 225, 225, 1);
+                border: 1px solid rgba(227, 222, 193, 0.95);
+            }
+        }
+
+
+        .elementor-nav-menu {
+            display: flex;
+        }
+
+        .menu-item a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.25s ease;
+            font-size: 1.2rem;
+        }
+
+        .section-bg {
+            width: 100vw;
+            height: 100svh;
+            position: absolute;
+            transition: all 0.4s ease;
+            opacity: 0.4;
+            mix-blend-mode: soft-light;
+            background: linear-gradient(rgb(115, 0, 255) 0%, rgb(0, 180, 222) 100%);
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .f-screen {
+            width: 100vw;
+            height: 100svh;
+        }
+    </style>
+</head>
+<body>
+<!--光标-->
+<div id="dh_cursor">
+    <div class="dh_cursor__circle"></div>
+</div>
+
+<div cursor-class="menu" class="menu-item">
+
+    <div class="menu-container">
+        <nav>
+            <ul class="elementor-nav-menu">
+                <li class="menu-item">
+                    <a href="https://www.baidu.com">首页</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.baidu.com">关于我们</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.baidu.com">产品中心</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.baidu.com">新闻中心</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.baidu.com">联系我们</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <div class="section section-1">
+        <div class="section-bg"></div>
+        <div class="absolute f-screen">
+            <canvas width="3840" height="760"
+                    style="width: 1920px; height: 380px; translate: none; rotate: none; scale: none; transform: translate3d(0px, 0px, 0px) skew(8.4901deg, 0deg) scale(1.1132, 1.1132); transition: unset;"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cursor = document.querySelector('#dh_cursor');
+        const cursorCircle = cursor.querySelector('.dh_cursor__circle');
+
+
+        const mouse = {x: -100, y: -100}; // mouse pointer's coordinates
+        const pos = {x: 0, y: 0}; // cursor's coordinates
+        const speed = 0.2; // cursor movement speed (between 0 and 1)
+
+        // Function to update mouse coordinates based on mousemove event.
+        const updateCoordinates = e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        }
+        window.addEventListener('mousemove', updateCoordinates);
+
+
+        function getAngle(diffX, diffY) {
+            return Math.atan2(diffY, diffX) * 180 / Math.PI;
+        }
+
+        // Function to calculate the squeeze effect based on cursor movement.
+        function getSqueeze(diffX, diffY) {
+            const distance = Math.sqrt(
+                Math.pow(diffX, 2) + Math.pow(diffY, 2)
+            );
+            const maxSqueeze = 0.15;
+            const accelerator = 1500;
+            return Math.min(distance / accelerator, maxSqueeze);
+        }
+
+        const updateCursor = () => {
+            const diffX = Math.round(mouse.x - pos.x);
+            const diffY = Math.round(mouse.y - pos.y);
+
+            pos.x += diffX * speed;
+            pos.y += diffY * speed;
+
+            const angle = getAngle(diffX, diffY);
+            const squeeze = getSqueeze(diffX, diffY);
+
+            const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) + ')';
+            const rotate = 'rotate(' + angle + 'deg)';
+            const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+
+            // Apply transformations to the cursor and cursorCircle elements.
+            cursor.style.transform = translate;
+            cursorCircle.style.transform = rotate + scale;
+        }
+
+        function loop() {
+            updateCursor();
+            requestAnimationFrame(loop);
+        }
+
+        // Start the animation loop.
+        requestAnimationFrame(loop);
+
+        // Select all elements with the attribute cursor-class
+        const cursorModifiers = document.querySelectorAll('[cursor-class]');
+
+        // Apply different functions for each mouse enter and leave event
+        cursorModifiers.forEach(cursorModifier => {
+            cursorModifier.addEventListener('mouseenter', function () {
+                const className = this.getAttribute('cursor-class');
+                cursor.classList.add(className);
+            });
+
+            cursorModifier.addEventListener('mouseleave', function () {
+                const className = this.getAttribute('cursor-class');
+                cursor.classList.remove(className);
+            });
+
+        });
+    })
+</script>
+</body>
+</html>
