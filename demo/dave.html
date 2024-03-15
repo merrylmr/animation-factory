@@ -188,6 +188,37 @@
             z-index: 9999;
         }
 
+        .progress_bar__wrapper,
+        .dh_home_transitions {
+
+            width: 100%;
+            min-height: 100svh;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+        }
+
+        .dh_home_transitions {
+            background: #000;
+        }
+
+        .progress_bar__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .progress_bar {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
 
     </style>
 </head>
@@ -197,16 +228,22 @@
     <div class="dh_cursor__circle"></div>
 </div>
 <div>
-    <div id="dh_preloader">
-
-    </div>
+    <!--      <div id="dh_preloader"></div>-->
+    <!--    用阴影实现遮罩部分的效果，保留中间可视区域 -->
     <div class="dh_transition_scale_wrapper"></div>
+    <!--  中间的遮罩  -->
     <div class="dh_home_transitions">
+        <div class="progress_bar__wrapper">
+            <div class="progress_bar"></div>
+        </div>
+
         <div class="mask">
             <div class="mask-item curtain_left curtain_top"></div>
             <div class="mask-item curtain_right curtain_bottom"></div>
         </div>
     </div>
+
+
 </div>
 
 
@@ -228,9 +265,9 @@
     <div class="section section-1">
         <div class="section-content">
             <div class="hey-content">
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <script src="/js/lottie-player.js"></script>
                 <lottie-player
-                        src="https://lottie.host/8b669e32-db63-4c58-bc2b-be9964424e7e/8qtwfSbLzC.json"
+                        src="/json/hey.json"
                         background="transparent" speed="2" style="width: 80vw;"
                         direction="1"
                         mode="normal"
@@ -248,6 +285,7 @@
 
 <script type="module">
     import {gsap} from "gsap";
+    import {gapSize} from "three/nodes";
 
     window.MOTIONPAGE_FRONT = {version: "2.1.6"}
 
@@ -320,6 +358,7 @@
             })
         }
     );
+    // 光标
     document.addEventListener('DOMContentLoaded', function () {
         const cursor = document.querySelector('#dh_cursor');
         const cursorCircle = cursor.querySelector('.dh_cursor__circle');
@@ -395,6 +434,7 @@
 
         });
     })
+
     window.addEventListener('load', () => {
         // hey的循环动画
         const context = gsap.context(() => {
@@ -413,13 +453,35 @@
 
         if (matchMedia("screen and (min-width: 1100px)").matches) {
 
-
             gsap.context(() => {
                 gsap.timeline()
-                    .to(".dh_home_transitions", {
+                    .set(".dh_transition_scale_wrapper",
+                        {autoAlpha: 1})
+                    .to(".progress_bar", {
+                        ease: "power1",
+                        width: "1px",
+                        height: "calc(100vh - 400px)"
+                    }, 1.7)
+                    .to(".progress_bar", {
+                        autoAlpha: 1,
                         display: "none",
                         duration: .1
-                    }, 4.1)
+                    }, 3).fromTo(".progress_bar", {width: "20px", height: "20px"}, {
+                    ease: "power1",
+                    width: "1px",
+                    height: "1px",
+                    "border-radius": 0,
+                    duration: .7
+                }, 1)
+                    .fromTo(".progress_bar", {x: "50vw", ease: "power4.inOut"}, {
+                        autoAlpha: 1,
+                        x: "0vw",
+                        duration: .9
+                    }, .1)
+                    .to("#dh_preloader", {
+                        display: "none",
+                        duration: .1
+                    }, 0)
                     .to(".curtain_left", {
                         transformOrigin: "0% 50%",
                         width: "0px",
@@ -432,10 +494,10 @@
                         ease: "power4.inOut",
                         duration: 1.5
                     }, 2.6)
-                    .to("#dh_preloader", {
+                    .to(".dh_home_transitions", {
                         display: "none",
                         duration: .1
-                    }, 0)
+                    }, 4.1)
                     .from(".dh_transition_scale_wrapper", {
                         width: "calc(100vw - 400px)",
                         height: "calc(100vh - 400px)",
@@ -450,16 +512,59 @@
                         ease: "power3.inOut",
                         duration: .8
                     }, 4.8)
-                    .fromTo(".dh_transition_scale_wrapper", {autoAlpha: 1}, {
-                        autoAlpha: 1,
+                    .to(".dh_transition_scale_wrapper", {
+                        autoAlpha: 0,
                         duration: .1
-                    }, 0).to(".dh_transition_scale_wrapper", {
-                    autoAlpha: 0,
-                    duration: .1
-                }, 5.6)
+                    }, 5.6)
+                    .to(".dh_home_transitions", {
+                        background: "rgba(0, 0, 0, 0)",
+                        duration: .1
+                    }, 0)
+                    // 执行lottie动画
+                    .to(".hey_3d_animation", {
+                        ease: "power3.inOut",
+                        onUpdate: function () {
+                            this._targets.map(({_lottie: _l}) => {
+                                _l && _l.goToAndStop(this.progress() * _l.totalFrames, !0)
+                            })
+                        }
+                    }, 3.9)
 
             })
 
+            // gsap.context(() => {
+            //     gsap.timeline().to(".progress_bar", {
+            //         ease: "power2.inOut",
+            //         width: "calc(100vw - 100px)",
+            //         height: "1px",
+            //         "border-radius": 0,
+            //         duration: .6
+            //     }, 1.3)
+            //         .to(".curtain_top", {
+            //             transformOrigin: "50% 0%",
+            //             scaleY: 0,
+            //             ease: "power3.inOut"
+            //         }, 1.9)
+            //         .fromTo(".curtain_bottom", {height: "50%"}, {
+            //             transformOrigin: "50% 100%",
+            //             scaleY: 0,
+            //             ease: "power3.inOut"
+            //         }, 1.9)
+            //         .to(".progress_bar", {
+            //             width: "20px",
+            //             height: "20px",
+            //             duration: .1
+            //         }, .1).to(".progress_bar", {
+            //         autoAlpha: 0,
+            //         display: "none",
+            //         duration: .2
+            //     }, 1.9).fromTo(".progress_bar", {x: "50vw"}, {
+            //         autoAlpha: 1,
+            //         x: "0vw",
+            //         ease: "power2.inOut",
+            //         duration: .8
+            //     }, .2)
+            // })
 
 
             gsap.context(() => {
