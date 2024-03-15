@@ -188,11 +188,43 @@
             z-index: 9999;
         }
 
+        .progress_bar__wrapper,
+        .dh_home_transitions {
+
+            width: 100%;
+            min-height: 100svh;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+        }
+
+        .dh_home_transitions {
+            background: #000;
+        }
+
+        .progress_bar__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .progress_bar {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
 
     </style>
-  <script type="module" crossorigin src="/animation-factory/dave.pY18FCWQ.js"></script>
+  <script type="module" crossorigin src="/animation-factory/dave.IXWxqx9z.js"></script>
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.9p4a8sJU.js">
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.FSCrshNh.js">
+  <link rel="modulepreload" crossorigin href="/animation-factory/chunk.uVdaq5N5.js">
 </head>
 <body>
 <!--光标-->
@@ -200,16 +232,22 @@
     <div class="dh_cursor__circle"></div>
 </div>
 <div>
-    <div id="dh_preloader">
-
-    </div>
+    <!--      <div id="dh_preloader"></div>-->
+    <!--    用阴影实现遮罩部分的效果，保留中间可视区域 -->
     <div class="dh_transition_scale_wrapper"></div>
+    <!--  中间的遮罩  -->
     <div class="dh_home_transitions">
+        <div class="progress_bar__wrapper">
+            <div class="progress_bar"></div>
+        </div>
+
         <div class="mask">
             <div class="mask-item curtain_left curtain_top"></div>
             <div class="mask-item curtain_right curtain_bottom"></div>
         </div>
     </div>
+
+
 </div>
 
 
@@ -231,9 +269,9 @@
     <div class="section section-1">
         <div class="section-content">
             <div class="hey-content">
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <script src="/animation-factory/js/lottie-player.js"></script>
                 <lottie-player
-                        src="https://lottie.host/8b669e32-db63-4c58-bc2b-be9964424e7e/8qtwfSbLzC.json"
+                        src="/json/hey.json"
                         background="transparent" speed="2" style="width: 80vw;"
                         direction="1"
                         mode="normal"
