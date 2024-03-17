@@ -16,7 +16,7 @@
         }
 
         body {
-        / / background: #000;
+            background: #000;
             width: 100%;
         }
 
@@ -89,7 +89,7 @@
         }
 
         .section-bg .bg-color {
-            background: linear-gradient(rgb(91, 0, 255) 0%, rgb(0, 215, 214) 100%);
+            /*background: linear-gradient(rgb(91, 0, 255) 0%, rgb(0, 215, 214) 100%);*/
             width: 100vw;
             height: 100svh;
             position: absolute;
@@ -220,6 +220,27 @@
         }
 
 
+        .hey_shadow_wrapper {
+            width: 80%;
+            height: 100vh;
+            position: absolute;
+            margin: 0 10vw 0 8vw;
+            opacity: 1;
+        }
+
+        .hey_shadow {
+            background-image: url("https://daveholloway.uk/wp-content/uploads/2023/11/hey_shadow.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: contain;
+        }
+
+
     </style>
 </head>
 <body>
@@ -274,6 +295,11 @@
                         class="hey_3d_animation"></lottie-player>
 
 
+            </div>
+            <div class="hey_shadow_wrapper">
+                <div class="hey_shadow">
+
+                </div>
             </div>
         </div>
         <div class="section-bg">
@@ -444,10 +470,31 @@
                     ease: "sine.inOut",
                     duration: 4
                 })
+                .fromTo(".hey_shadow_wrapper", {
+                    filter: "blur(5px)",
+                    autoAlpha: .3,
+                    y: "7vh"
+                }, {
+                    scale: .75,
+                    filter: "blur(0px)",
+                    autoAlpha: .8,
+                    y: "0vh",
+                    ease: "sine.inOut",
+                    duration: 4
+                }, 0)
                 .to('.section-content', {
                     "padding-top": "5svh",
                     duration: 4
                 }).yoyo(!0).repeat(-1)
+        })
+        // 背景色
+        gsap.context(() => {
+            gsap.timeline().fromTo(".bg-color",
+                {background: "linear-gradient(180deg, rgba(216,0,255,1) 0%, rgba(0,33,255,1) 100%)"},
+                {
+                    background: "linear-gradient(180deg, rgba(91,0,255,1) 0%, rgba(0,215,214,1) 100%)",
+                    duration: 5
+                }, 0).yoyo(!0).repeat(-1)
         })
         window._$W = window;
 
@@ -506,7 +553,7 @@
                         ease: "power3.inOut",
                         duration: .8
                     }, 4.8)
-                    .from(".home_animation_wrapper", {
+                    .from(".section-1", {
                         scale: .87,
                         transformOrigin: "55% 33%",
                         ease: "power3.inOut",
@@ -588,7 +635,24 @@
                     rotationZ: 10,
                     xPercent: 15,
                     yPercent: 0
-                }, 0);
+                }, 0)
+                    .fromTo(".hey_shadow", {
+                        rotationX: 0,
+                        rotationY: 0,
+                        rotationZ: 0,
+                        autoAlpha: 1,
+                        xPercent: 0,
+                        yPercent: 0,
+                        scaleX: 1
+                    }, {
+                        rotationX: -2,
+                        rotationY: -2,
+                        rotationZ: -2,
+                        autoAlpha: .6,
+                        xPercent: -10,
+                        yPercent: 5,
+                        scaleX: .8
+                    }, 0);
 
                 _$W.tl2 = gsap.timeline().fromTo(".section-content", {
                     scale: 1,
