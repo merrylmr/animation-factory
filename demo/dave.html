@@ -16,8 +16,9 @@
         }
 
         body {
-        / / background: #000;
             width: 100%;
+            overflow-x: hidden;
+            font-family: "Urbanist, Sans-serif";
         }
 
         #dh_cursor {
@@ -42,12 +43,33 @@
                 transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
             }
 
+
+            #dh_cursor.image .dh_cursor__circle {
+                width: 110px;
+                height: 110px;
+                background-color: rgba(227, 222, 193, 0.95);
+            }
+
             #dh_cursor.menu .dh_cursor__circle {
                 width: 110px;
                 height: 110px;
                 background-color: rgba(225, 225, 225, 1);
                 border: 1px solid rgba(227, 222, 193, 0.95);
             }
+
+            #dh_cursor.image::after {
+                content: '';
+                position: absolute;
+                left: -50%;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                background-image: url(https://daveholloway.uk/wp-content/uploads/2023/10/icons8-eye-50.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+
         }
 
 
@@ -58,7 +80,7 @@
 
         .menu-list {
             padding: 50px;
-            position: absolute;
+            position: fixed;
             width: 100%;
             z-index: 8;
             display: flex;
@@ -89,7 +111,7 @@
         }
 
         .section-bg .bg-color {
-            background: linear-gradient(rgb(91, 0, 255) 0%, rgb(0, 215, 214) 100%);
+            /*background: linear-gradient(rgb(91, 0, 255) 0%, rgb(0, 215, 214) 100%);*/
             width: 100vw;
             height: 100svh;
             position: absolute;
@@ -220,10 +242,214 @@
         }
 
 
+        .hey_shadow_wrapper {
+            width: 80%;
+            height: 100vh;
+            position: absolute;
+            margin: 0 10vw 0 8vw;
+            opacity: 1;
+        }
+
+        .hey_shadow {
+            background-image: url("https://daveholloway.uk/wp-content/uploads/2023/11/hey_shadow.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: contain;
+        }
+
+        .section-2 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*padding: 100px;*/
+            gap: 100px;
+            flex-direction: column;
+            padding-top: 180px;
+        }
+
+        .home_intro_text {
+            text-wrap: balance;
+            font-size: 36px;
+            line-height: 1.4em;
+            text-align: center;
+            width: 60vw;
+        }
+
+        .divider {
+            /*border: 1px solid #000;*/
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .divider-inner {
+            width: 5%;
+            height: 1px;
+            background-color: #000;
+        }
+
+        .heading-title {
+            font-size: 44px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 55px;
+        }
+
+        .project-item {
+            padding: 10vh 150px;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+
+        }
+
+        .flex-end {
+            justify-content: flex-end;
+        }
+
+        .project-item__wrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        .dh_three_quarters {
+            width: 75%;
+        }
+
+        .dh_three_quarters .project-item__left,
+        .dh_three_quarters .project-item__right {
+            width: 50%;
+        }
+
+        .project-item__wrapper.dh_two_thirds {
+            width: 66%;
+            flex-direction: column;
+        }
+
+        .dh_two_thirds .project-item__left {
+            flex-direction: row;
+
+        }
+
+        .dh_two_thirds .project-item__left,
+        .dh_two_thirds .project-item__right {
+            width: 100%;
+        }
+
+        .project-item__title {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .project-item__title h2 {
+            font-family: "Bungee Shade", Sans-serif;
+            font-weight: normal;
+            font-size: 2.5em;
+        }
+
+        .project-item__title h3 {
+            font-size: 26px;
+            line-height: 1.1em;
+        }
+
+        .project-item__left {
+            width: 40%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-item__right {
+            position: relative;
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        .item-one {
+            background: #e1aaae;
+        }
+
+        .item-two {
+            background-color: rgb(207, 242, 237);
+        }
+
+        .item-three {
+            background-color: rgb(53, 170, 226);
+        }
+
+        .project-item__img {
+            position: absolute;
+            width: 100%;
+            height: 80vh;
+            flex: none;
+        }
+
+        .home_rollover_image_2 {
+            left: 100%;
+        }
+
+        .bg-img,
+        .bg-mask-2,
+        .bg-mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .bg-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .bg-mask {
+            z-index: 10;
+        }
+
+        .project-item__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-item__arrow {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+        }
+
+        @media screen and (max-width: 1500px) {
+            .project-item {
+                padding: 10vh 75px;
+                min-height: 50vh;
+            }
+        }
     </style>
-  <script type="module" crossorigin src="/animation-factory/dave.IXWxqx9z.js"></script>
+  <script type="module" crossorigin src="/animation-factory/dave.jpEl3vqV.js"></script>
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.9p4a8sJU.js">
-  <link rel="modulepreload" crossorigin href="/animation-factory/chunk.FSCrshNh.js">
+  <link rel="modulepreload" crossorigin href="/animation-factory/chunk.sw_-D95Y.js">
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.uVdaq5N5.js">
 </head>
 <body>
@@ -265,27 +491,178 @@
         </li>
     </ul>
 </div>
-<div class="container">
-    <div class="section section-1">
-        <div class="section-content">
-            <div class="hey-content">
-                <script src="/animation-factory/js/lottie-player.js"></script>
-                <lottie-player
-                        src="../json/hey.json"
-                        background="transparent" speed="2" style="width: 80vw;"
-                        direction="1"
-                        mode="normal"
-                        class="hey_3d_animation"></lottie-player>
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <div class="container">
+            <div class="section section-1">
+                <div class="section-content">
+                    <div class="hey-content">
+                        <script src="/animation-factory/js/lottie-player.js"></script>
+                        <lottie-player
+                                src="../json/hey.json"
+                                background="transparent" speed="2" style="width: 80vw;"
+                                direction="1"
+                                mode="normal"
+                                class="hey_3d_animation"></lottie-player>
 
+
+                    </div>
+                    <div class="hey_shadow_wrapper">
+                        <div class="hey_shadow">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section-bg">
+                    <div class="bg-color"></div>
+                </div>
 
             </div>
-        </div>
-        <div class="section-bg">
-            <div class="bg-color"></div>
-        </div>
+            <div class="section-2">
+                <div class="home_intro_text">
+                    <p>Thanks for stopping by. I’m Dave Holloway, a multi-disciplinary designer and strategist based in
+                        Leeds
+                        (UK)
+                        specialising in branding and digital design.</p>
+                </div>
+                <div class="divider">
+                    <div class="divider-inner"></div>
+                </div>
 
+                <div class="heading-title">Selected work</div>
+                <div class="arrow">
+                    <ion-icon name="arrow-down-circle-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="section-3">
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-item__wrapper">
+                            <div class="project-item__left item-one">
+                                <div class="project-item__title">
+                                    <h2>
+                                        Kinetic Solutions Group
+                                    </h2>
+                                    <h3> Strategic Rebranding</h3>
+                                </div>
+                                <div class="project-item__arrow">
+                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                </div>
+
+                            </div>
+                            <div class="project-item__right"
+                                 cursor-class="image">
+                                <div class="project-item__img home_rollover_image_1">
+                                    <div class="bg-mask item-one"></div>
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_kinetic_solutions_group_1-scaled.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
+                                </div>
+                                <div class="project-item__img home_rollover_image_2" style="z-index:20">
+                                    <div class="bg-mask-2 item-one"></div>
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_kinetic_solutions_group_2-scaled.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="project-item flex-end">
+                        <div class="project-item__wrapper dh_two_thirds">
+                            <div class="project-item__left item-two">
+                                <div class="project-item__title">
+                                    <h2>
+                                        Paper +Land
+                                    </h2>
+                                    <h3> Brand &amp; Digital Marketing</h3>
+                                </div>
+                                <div class="project-item__arrow">
+                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                </div>
+
+                            </div>
+                            <div class="project-item__right"
+                                 cursor-class="image">
+                                <div class="project-item__img">
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_2000px_paperland.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
+                                </div>
+                                <div class="project-item__img home_rollover_image_2">
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/paperandland-print-cellobag-mockup_3000px-scaled.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-item__wrapper dh_three_quarters">
+                            <div class="project-item__right"
+                                 cursor-class="image">
+                                <div class="project-item__img">
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/09/CheltenhamCouncil_2000x2000px.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
+                                </div>
+                                <div class="project-item__img home_rollover_image_2">
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/09/cheltenham-council-window-mockup-3-scaled.jpg?lossy=2&strip=1&webp=1"/>
+                                </div>
+                            </div>
+                            <div class="project-item__left item-three">
+                                <div class="project-item__title">
+                                    <h2>
+                                        Paper +Land
+                                    </h2>
+                                    <h3> Brand &amp; Digital Marketing</h3>
+                                </div>
+                                <div class="project-item__arrow">
+                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-item__wrapper">
+                            <div class="project-item__left"
+                                 style="background-color: rgb(187, 144, 34)">
+                                <div class="project-item__title">
+                                    <h2>
+                                        Kinetic Solutions Group
+                                    </h2>
+                                    <h3> Strategic Rebranding</h3>
+                                </div>
+                                <div class="project-item__arrow">
+                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                </div>
+
+                            </div>
+                            <div class="project-item__right"
+                                 cursor-class="image">
+                                <div class="project-item__img">
+                                    <img
+                                            src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_everard_1-scaled.jpg?lossy=2&strip=1&webp=1"
+                                            alt="">
+                                </div>
+                                <div class="project-item__img home_rollover_image_2">
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_everard_2-scaled.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script data-cfasync="false"
+        src="https://daveholloway.uk/wp-content/plugins/motionpage/assets/js/gsap/ScrollSmoother.min.js?ver=3.12.2"
+        id="mp-ScrollSmoother-js"></script>
 
 </body>
 </html>
