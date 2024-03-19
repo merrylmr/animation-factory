@@ -319,6 +319,7 @@
         .project-item__wrapper {
             display: flex;
             width: 100%;
+            align-items: stretch;
         }
 
         .dh_three_quarters {
@@ -376,6 +377,11 @@
             display: flex;
             flex-direction: row;
             overflow: hidden;
+
+        }
+
+        .project-transition-2 {
+            height: 80vh;
         }
 
         .item-one {
@@ -390,18 +396,24 @@
             background-color: rgb(53, 170, 226);
         }
 
+        .item-yellow {
+            background-color: rgb(187, 144, 34)
+        }
+
         .project-item__img {
             position: absolute;
             width: 100%;
-            height: 80vh;
+            height: 100%;
             flex: none;
+            overflow: hidden;
+            min-height: 80vh;
         }
 
-        .home_rollover_image_2 {
+        .project-img-2 {
             left: 100%;
+            z-index: 20;
         }
 
-        .bg-img,
         .bg-mask-2,
         .bg-mask {
             position: absolute;
@@ -410,21 +422,17 @@
             left: 0;
             top: 0;
             opacity: 0;
-        }
-
-        .bg-img {
-            background-size: cover;
-            background-repeat: no-repeat;
-
-        }
-
-        .bg-mask {
             z-index: 10;
+        }
+
+
+        .bg-mask-2 {
+            opacity: 0.7;
         }
 
         .project-item__img img {
             width: 100%;
-            height: 100%;
+            height: 90vh;
             object-fit: cover;
         }
 
@@ -447,7 +455,7 @@
             }
         }
     </style>
-  <script type="module" crossorigin src="/animation-factory/dave.jpEl3vqV.js"></script>
+  <script type="module" crossorigin src="/animation-factory/dave.KhEvuwqz.js"></script>
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.9p4a8sJU.js">
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.sw_-D95Y.js">
   <link rel="modulepreload" crossorigin href="/animation-factory/chunk.uVdaq5N5.js">
@@ -550,14 +558,14 @@
                                 </div>
 
                             </div>
-                            <div class="project-item__right"
+                            <div class="project-item__right project-transition-1"
                                  cursor-class="image">
-                                <div class="project-item__img home_rollover_image_1">
+                                <div class="project-item__img project-img-1">
                                     <div class="bg-mask item-one"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_kinetic_solutions_group_1-scaled.jpg?lossy=2&strip=1&webp=1"
                                          alt="">
                                 </div>
-                                <div class="project-item__img home_rollover_image_2" style="z-index:20">
+                                <div class="project-item__img project-img-2">
                                     <div class="bg-mask-2 item-one"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_kinetic_solutions_group_2-scaled.jpg?lossy=2&strip=1&webp=1"
                                          alt="">
@@ -581,13 +589,15 @@
                                 </div>
 
                             </div>
-                            <div class="project-item__right"
+                            <div class="project-item__right project-transition-2"
                                  cursor-class="image">
-                                <div class="project-item__img">
+                                <div class="project-item__img project-img-1">
+                                    <div class="bg-mask item-two"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_2000px_paperland.jpg?lossy=2&strip=1&webp=1"
                                          alt="">
                                 </div>
-                                <div class="project-item__img home_rollover_image_2">
+                                <div class="project-item__img project-img-2">
+                                    <div class="bg-mask-2 item-two"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/paperandland-print-cellobag-mockup_3000px-scaled.jpg?lossy=2&strip=1&webp=1"
                                          alt="">
                                 </div>
@@ -596,13 +606,15 @@
                     </div>
                     <div class="project-item">
                         <div class="project-item__wrapper dh_three_quarters">
-                            <div class="project-item__right"
+                            <div class="project-item__right project-transition-3"
                                  cursor-class="image">
-                                <div class="project-item__img">
+                                <div class="project-item__img project-img-1">
+                                    <div class="bg-mask item-three"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/09/CheltenhamCouncil_2000x2000px.jpg?lossy=2&strip=1&webp=1"
                                          alt="">
                                 </div>
-                                <div class="project-item__img home_rollover_image_2">
+                                <div class="project-item__img project-img-2">
+                                    <div class="bg-mask-2 item-three"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/09/cheltenham-council-window-mockup-3-scaled.jpg?lossy=2&strip=1&webp=1"/>
                                 </div>
                             </div>
@@ -637,14 +649,15 @@
                                 </div>
 
                             </div>
-                            <div class="project-item__right"
+                            <div class="project-item__right project-transition-1"
                                  cursor-class="image">
-                                <div class="project-item__img">
-                                    <img
-                                            src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_everard_1-scaled.jpg?lossy=2&strip=1&webp=1"
-                                            alt="">
+                                <div class="project-item__img project-img-1">
+                                    <div class="bg-mask item-yellow"></div>
+                                    <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_everard_1-scaled.jpg?lossy=2&strip=1&webp=1"
+                                         alt="">
                                 </div>
-                                <div class="project-item__img home_rollover_image_2">
+                                <div class="project-item__img project-img-2">
+                                    <div class="bg-mask-2 item-yellow"></div>
                                     <img src="https://b3400872.smushcdn.com/3400872/wp-content/uploads/2023/10/home_project_images_3000px_everard_2-scaled.jpg?lossy=2&strip=1&webp=1"
                                          alt="">
                                 </div>
